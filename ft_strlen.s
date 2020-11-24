@@ -3,8 +3,8 @@
           section   .text
 _ft_strlen:
        mov rax, -1
-loop:
+_loop:
         inc rax
         cmp BYTE [rdi + rax], 0
-        jne  loop
+        jne  _loop
         ret 

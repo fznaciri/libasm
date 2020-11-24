@@ -2,13 +2,17 @@
 
             section .text
 
-
 _ft_list_size:
             xor rax, rax
 
-loop:
+_loop:
             inc rax
+            cmp rdi, 0
+            je _return
             cmp word [rdi + 8], 0
             mov  rdi,[rdi + 8]
-            jne loop
+            jne _loop
+            ret
+_return:
+            mov rax, 0
             ret

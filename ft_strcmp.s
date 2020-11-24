@@ -6,17 +6,17 @@ _ft_strcmp:
              mov rax, 0
              mov rbx, 0
              mov r8, -1
-loop:
+_loop:
              inc r8
              mov al, BYTE [rdi + r8]
              mov bl, BYTE [rsi + r8]
              cmp al, 0
-             je done
+             je _done
              cmp bl, 0
-             je done
+             je _done
              cmp al, bl
-             je loop
-             jmp done
-done:             
+             je _loop
+             jmp _done
+_done:             
              sub rax, rbx
              ret

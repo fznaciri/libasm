@@ -5,9 +5,9 @@
 _ft_write:                      
             mov rax, 0x02000004          
             syscall 
-            jc error ; flag?
+            jc _error 
             ret
-error:
+_error:
             push rax
             call ___error
             pop qword [rax]
